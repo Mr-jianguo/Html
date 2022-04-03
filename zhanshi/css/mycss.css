@@ -1,0 +1,168 @@
+ /* 给两个正方体设置旋转动画 */
+        @keyframes my3d {
+            0% {
+                transform: rotateX(0) rotateY(0) rotateZ(0)
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)
+            }
+        }
+ 
+        ul {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            perspective-origin: 50% 50%;
+            transform-style: preserve-3d;
+            margin: 200px auto;
+            list-style: none;
+            animation-name: my3d;
+            animation-play-state: running;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+ 
+        ul li {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.8;
+        }
+ 
+        ul div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+        
+ 
+        /* 给里面的小正方体设置旋转 */
+        ul div:nth-last-child(6) {
+            transform: rotateX(0deg) translateZ(100px);
+            background-image: url("../img/1.png");
+        }
+ 
+        ul div:nth-last-child(5) {
+            transform: rotateX(90deg) translateZ(-100px);
+            background-image: url("../img/2.png");
+        }
+ 
+        ul div:nth-last-child(4) {
+            transform: rotateX(0deg) translateZ(-100px);
+            background-image: url("../img/3.png");
+        }
+ 
+        ul div:nth-last-child(3) {
+            transform: rotateX(-90deg) translateZ(-100px);
+            background-image: url("../img/4.png");
+        }
+ 
+        ul div:nth-last-child(2) {
+            transform: rotateY(90deg) translateZ(-100px);
+            background-image: url("../img/5.png");
+        }
+ 
+        ul div:nth-last-child(1) {
+            transform: rotateY(90deg) translateZ(100px);
+            background-image: url("../img/6.png");
+        }
+ 
+ 
+ 
+        /* 给外面的大正方体设置旋转 */
+        ul li:first-child {
+            transform: rotateX(0deg) translateZ(200px);
+            background-image: url("../img/1.png");
+        }
+ 
+        ul li:nth-child(2) {
+            transform: rotateX(90deg) translateZ(-200px);
+            background-image: url("../img/2.png");
+        }
+ 
+        ul li:nth-child(3) {
+            transform: rotateX(0deg) translateZ(-200px);
+            background-image: url("../img/3.png");
+        }
+ 
+        ul li:nth-child(4) {
+            transform: rotateX(-90deg) translateZ(-200px);
+            background-image: url("../img/4.png");
+        }
+ 
+        ul li:nth-child(5) {
+            transform: rotateY(90deg) translateZ(-200px);
+            background-image: url("../img/5.png");
+        }
+ 
+        ul li:nth-child(6) {
+            transform: rotateY(90deg) translateZ(200px);
+            background-image: url("../img/6.png");
+        }
+ 
+ 
+        /* 设置伪类hover鼠标碰触 */
+        
+        ul:hover li:first-child {
+            transition: 2s linear;
+            transform: translateZ(400px);
+        }
+ 
+        ul:hover li:nth-child(3) {
+            transition: 2s linear;
+            transform: translateZ(-400px);
+        }
+ 
+        ul:hover li:nth-child(2) {
+            transition: 2s linear;
+            transform: rotateX(90deg) translateZ(-400px);
+        }
+ 
+        ul:hover li:nth-child(4) {
+            transition: 2s linear;
+            transform: rotateX(-90deg) translateZ(-400px);
+        }
+ 
+        ul:hover li:nth-child(5) {
+            transition: 2s linear;
+            transform: rotateY(90deg) translateZ(-400px);
+        }
+ 
+        ul:hover li:nth-child(6) {
+            transition: 2s linear;
+            transform: rotateY(90deg) translateZ(400px);
+        }
+ 
+        ul:hover div:nth-last-child(6) {
+            transition: 3s linear;
+            transform: translateZ(200px);
+        }
+ 
+        ul:hover div:nth-last-child(4) {
+            transition: 3s linear;
+            transform: translateZ(-200px);
+        }
+ 
+        ul:hover div:nth-last-child(5) {
+            transition: 3s linear;
+            transform: rotateX(90deg) translateZ(-200px);
+        }
+ 
+        ul:hover div:nth-last-child(3) {
+            transition: 3s linear;
+            transform: rotateX(-90deg) translateZ(-200px);
+        }
+ 
+        ul:hover div:nth-last-child(2) {
+            transition: 3s linear;
+            transform: rotateY(90deg) translateZ(-200px);
+        }
+ 
+        ul:hover div:last-child {
+            transition: 3s linear;
+            transform: rotateY(90deg) translateZ(200px);
+        }
